@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile: 김세한</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;;
+        }
+        h2 {
+            margin-bottom: 0;
+        }
+        main {
+            width: 720px;
+            margin: 0 auto;
+            border-top: 2px solid #556867;
+            overflow: hidden;
+        }
+        .profile {
+            float: left;
+            height: 100vh;
+            padding: 0px 40px;
+        }
+        dt {
+            width: 80px;
+            border-right: 2px solid gray;
+        }
+        dt, dd {
+            line-height: 16px;
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        dd {
+            margin-left: 10px;
+        }
+        dl div+div {
+            margin-top: 16px;
+        }
+        .blur {
+            filter: blur(3px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>만나서 반갑습니다!</h1>
+    </header>
+    <main>
+        <div class="profile">
+            <h2>김세한</h2>
+            <p>Kim Sehan</p>
+            <img src="이력서 프로필사진.jpeg" alt="내 프로필 사진" width="240px">
+        </div>
+        <div class="introduce">
+            <h3>Introduce</h3>
+            <p>안녕하세요. 언제나 기분 좋은 개발자, 김세한입니다.</p>
+            <p>저는 프로젝트를 하며 단 한번도 팀원과 싸운적이 없습니다.</p><p>유순한 성격 때문인지 팀에 불화가 있더라도 부드럽게 해결하고 언제나 좋은 성과를 낼 수 있었습니다.</p>
+        </div>
+        <div class="detail">
+            <h3>Details</h3>
+            <dl>
+                <div>
+                    <dt>출생</dt>
+                    <dd>1997.07.10 서울</dd>
+                </div>
+                <div>
+                    <dt>혈액형</dt>
+                    <dd>O형</dd>
+                </div>
+                <div>
+                    <dt>MBTI</dt>
+                    <dd>ENFJ ~ ENFP</dd>
+                </div>
+                <div>
+                    <dt>취미</dt>
+                    <dd>영화 시청, 게임, 풋살</dd>
+                </div>
+                <div>
+                    <dt>특기</dt>
+                    <dd>구글링, ChatGPT 활용</dd>
+                </div>
+                <div>
+                    <dt>이상형</dt>
+                    <dd class="blur">명량하고 씩씩한 사람</dd>
+                </div>
+                <div>
+                    <dt>취업하고자 하는 회사</dt>
+                    <dd>1. 금융권 IT 기업</dd>
+                    <dd>2. IT 서비스 기업</dd>
+                </div>
+            </dl>
+        </div>
+    </main>
+    <footer>
+        010-2755-9328
+    </footer>
+</body>
+</html>
