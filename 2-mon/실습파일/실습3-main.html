@@ -1,22 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>실습3</title>
+    <title>main page</title>
 </head>
 <body>
-    <label for="name">사용자명: </label>
-    <input type="text" id="name" name="name" required /><br /><br />
-    <label for="password">비밀번호: </label>
-    <input type="password" id="password" name="password" required /><br /><br />
-    <label for="email">이메일: </label>
-    <input type="email" id="email" name="email" required /><br /><br />
-    <label for="email">전화번호: </label>
-    <input type="text" id="number" name="number" required /><br /><br />
-    <label for="email">자동로그인: </label>
-    <input type="checkbox" id="login" name="login" /><br /><br />
-    <input type="submit" value="초기화" />
-    <input type="submit" value="로그인" />
+    <main>
+        <form action="https://www.goodchoice.kr/product/result?" method="get">
+            <div>어디로 여행을 떠나고 싶으신가요?</div>
+            <label for="keyword">여행지</label>
+            <input type="text" id="keyword" name="keyword">
+            <input type="submit" value="검색하기" target="_blank"></input>
+        </form>
+        <copyright>© 여기어땡</copyright>
+    </main>
 </body>
 </html>
