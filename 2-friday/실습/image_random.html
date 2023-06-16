@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #picture {
+            width: 500px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: 0 0;
+        }
+    </style>
+</head>
+<body>
+    <H1>Korea has Karina.</H1>
+    <img id="picture" src="https://file.mk.co.kr/meet/neds/2022/12/image_readtop_2022_1133219_16711975225279750.jpg" alt="카리나"></img>
+</body>
+<script>
+    const karina = [
+        'https://file.mk.co.kr/meet/neds/2022/12/image_readtop_2022_1133219_16711975225279750.jpg',
+        'https://a-static.besthdwallpaper.com/karina-from-aespa-life-s-too-short-mv-photoshoot-girls-album-wallpaper-2560x1600-100931_7.jpg',
+        'https://i1.korea-iphone.com/files/608ad938e5c0716eab95190495148e47.jpg',
+        'https://img.girldir.com/upload/2022/06/08/liuzhimin1393761476954.jpg.wpcon.mw_1000,qt_80.9c3e75.jpg',
+        'https://i1.korea-iphone.com/files/a6bfc202ac62e4674f6dd173040f69d1.jpg',
+        'https://i.ytimg.com/vi/JIkML0Z9bUY/maxresdefault.jpg',
+        'https://cdn.bhdw.net/im/karina-from-aespa-life-s-too-short-mv-photoshoot-girls-album-wallpaper-100897_w635.webp',
+        'https://a-static.besthdwallpaper.com/karina-from-aespa-life-s-too-short-mv-photoshoot-girls-album-wallpaper-2560x1600-100931_7.jpg'
+    ]
+
+    let idx = 0;
+
+    const picture = document.getElementById('picture');
+
+    picture.addEventListener('click', function () {
+        idx = Math.floor(Math.random() * karina.length)
+        this.setAttribute('src', karina[idx])
+    })
+</script>
+</html>

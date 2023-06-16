@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .calculator {
+            position: relative;
+            width: 360px;
+            background-color: rgba(255,255,255, 0.6);
+            border-radius: 10px;
+            display: grid;
+            grid-template-rows: 1fr 4fr;
+        }
+        .calculator:before {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(-45deg, #210cae 0%, #4dc9e6 100% );
+            transform: translate3d(0px, 20px, 0) scale(0.95);
+            filter: blur(20px);
+            opacity: var(0.7);
+            transition: opacity 0.3s;
+            border-radius: inherit;
+        }
+        .calculator::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: inherit;
+            border-radius: inherit;
+        }
+        
+            
+        .calculator_display {
+            background-color: rgba(255,255,255, 0.9);
+        }
+        .calculator_btn_area {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .calculator_btn {
+            width: 80px;
+            height: 80px;
+            border: 0;
+            background-color: transparent;
+            font-size: 24px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div id="calculator_display">
+            
+        </div>
+        <div class="calculator_btn_area">
+            <button class="calculator_btn num" type="button">9</button>
+            <button class="calculator_btn num" type="button">8</button>
+            <button class="calculator_btn num" type="button">7</button>
+            <button class="calculator_btn exp" id="plus" type="button">+</button>
+            <button class="calculator_btn num" type="button">6</button>
+            <button class="calculator_btn num" type="button">5</button>
+            <button class="calculator_btn num" type="button">4</button>
+            <button class="calculator_btn exp" id="minus" type="button">-</button>
+            <button class="calculator_btn num" type="button">3</button>
+            <button class="calculator_btn num" type="button">2</button>
+            <button class="calculator_btn num" type="button">1</button>
+            <button class="calculator_btn exp" id="mul" type="button">*</button>
+            <button class="calculator_btn decimal" type="button">.</button>
+            <button class="calculator_btn num" type="button">0</button>
+            <button class="calculator_btn" id="cal" type="button">=</button>
+            <button class="calculator_btn exp" id="divide" type="button">/</button>
+        </div>
+    </div>
+    <script>
+        const display = document.getElementById('calculator_display');
+        const calculate = document.getElementById('cal');
+        const num_btns = document.getElementsByClassName('num');
+        const exp_btns = document.getElementsByClassName('exp');
+        let num1 = '';
+        let num2 = '';
+        let flag = true;
+        let exp = '';
+        let result = '';
+
+        calculate.addEventListener('click', function () {
+            result = cal(num1, exp, num2);
+            num1 = result;
+            display.innerHTML = result;
+        })
+
+        for (let num_btn of num_btns) {
+            num_btn.addEventListener('click', function () {
+                if (flag) {
+                    num1 += this.innerHTML
+                    console.log('num1: ', num1);
+                    display.innerHTML = num1;
+                } else {
+                    num2 += this.innerHTML
+                    console.log('num2: ', num2);
+                    display.innerHTML = num2;
+                }
+            })
+        }
+
+        for (let exp_btn of exp_btns) {
+            exp_btn.addEventListener('click', function () {
+                flag = !flag
+                exp = this.innerHTML
+            })
+        }
+
+        const eraseDisplay = () => {
+            if (!display.innerHTML) display.innerHTML = ""
+        }
+
+        const cal = (num1, exp, num2) => {
+            if (exp == '') return num1;
+            switch (exp) {
+                case "+":
+                    return parseInt(num1) + parseInt(num2)
+                case "-":
+                    return parseInt(num1) - parseInt(num2)
+                case "*":
+                    return parseInt(num1) * parseInt(num2)
+                case "/":
+                    return parseInt(num1) / parseInt(num2)
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>
