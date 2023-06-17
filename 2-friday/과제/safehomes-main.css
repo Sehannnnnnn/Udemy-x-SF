@@ -1,0 +1,423 @@
+@charset "utf-8";
+
+body,
+h1, h2, h3, h4, h5, h6,
+ul, ol, dl, dd,
+p,
+fieldset, legend {
+	margin: 0;
+	padding: 0;
+}
+
+body, input, textarea, select, button {
+	font-size: 14px;
+	font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+}
+
+ul, ol {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+em {
+	font-style: normal
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+img {
+	vertical-align: top;
+}
+
+fieldset {
+	border: 0;
+}
+
+.blind {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+   }
+
+:root {
+    --main-color : #0e7159;
+    --sub-color: #333D48;
+    --second-color: #687684;
+}
+
+.header {
+    overflow: hidden;
+    height: 70px;
+    padding: 0px 24px;
+}
+
+.header_logo {
+    float: left;
+    width: 195px;
+    height: 70px;
+    background: url('static/logo_long.png') no-repeat 100%;
+}
+
+.header_gnb {
+    float: right;
+    margin-top: 20px;
+}
+
+
+.header_link {
+    display: none;
+    width: 90px;
+    height: 30px;
+    color: var(--sub-color);
+    text-align: center;
+    line-height: 30px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.header_link.start {
+    display: inline-block;
+    vertical-align: top;
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.top_banner_link {
+    display: block;
+    height: 192px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.top_banner_msg {
+    height: 140px;
+    padding-top: 52px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(0,0,0,0.8);
+}
+
+.about_safehomes {
+    margin-top: -20px;
+}
+
+.article_title {
+    font-weight: bold;
+    color: var(--main-color);
+    font-size: 21px;
+    text-align: center;
+    letter-spacing: -0.785656px;
+}
+
+.safehomes {
+    font-weight: 500;
+}
+
+.about_safehomes .list {
+    width: 294px;
+    margin: 0 auto;
+    margin-top: 42px;
+}
+
+.about_safehomes .item {
+    margin-top: 32px;
+}
+
+.about_safehomes .list_title {
+    margin-top: 21px;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 25px;
+    color: var(--sub-color);
+    letter-spacing: -0.785656px;
+}
+
+.about_safehomes .list_detail {
+    margin-top: 17px;
+    font-weight: 500px;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: -0.598595px;
+    color: var(--second-color)
+}
+
+.about_safehomes .article_title {
+    margin-top: 84px;
+}
+
+.about_safehomes .list_order {
+    font-size: 21px;
+    color: var(--main-color);
+}
+
+.about_safehomes .list_title.how {
+    margin-top: 9px;
+}
+
+.about_safehomes .link_more {
+    display: block;
+    width: 136px;
+    margin: 31px auto 0;
+    font-size: 0;
+}
+
+.price_safehomes .link_more {
+    display: block;
+    width: 272px;
+    margin: 31px auto 0;
+    font-size: 0;
+    overflow: hidden;
+}
+
+.about_safehomes .link_text,
+.price_safehomes .link_text {
+    font-size: 18px;
+    line-height: 18px;
+    letter-spacing: -0.67px;
+    color: var(--main-color);
+}
+
+.about_safehomes .link_more::after,
+.price_safehomes .link_more::after {
+    content: '';
+    float: right;
+    margin-left: 10px;
+    width: 8px;
+    height: 20px;
+    background: url('static/icon_link.png') no-repeat 50%;
+}
+
+.feature_safehomes {
+    width: 340px;
+    margin: 0 auto;
+    margin-top: 77px;
+}
+
+.feature_safehomes .list_title {
+    font-weight: bold;
+    color: var(--main-color);
+    font-size: 21px;
+    text-align: center;
+    letter-spacing: -0.785656px;
+}
+
+.feature_safehomes .list_subtitle {
+    margin-top: 33px;
+    font-weight: bold;
+    font-size: 36px;
+    text-align: center;
+    color: var(--sub-color);
+    letter-spacing: -1.35px;
+    line-height: 43.2px;
+}
+
+.feature_safehomes .list_detail {
+    margin-top: 33px;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -0.67px;
+    text-align: center;
+    color: var(--second-color);
+}
+
+.feature_safehomes .list_screenshot {
+    margin-top: 52px;
+}
+
+.feature_safehomes .feature_item+.feature_item {
+    margin-top: 175px;
+}
+
+
+.price_safehomes {
+    margin-top: 110px;
+}
+
+.price_safehomes .price_list {
+    margin-top: 42px;
+}
+
+.price_safehomes .price_item {
+    box-sizing: border-box;
+    width: 340px;
+    padding: 30px 24px 24px;
+    border-radius: 16px;
+    background-color: #f2f3f4;
+    margin: 0 auto;
+}
+
+.price_safehomes .price_item + .price_item {
+    margin-top: 32px;
+}
+
+.price_safehomes .price_item .title {
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28.8px;
+    letter-spacing: -0.9px;
+    color: var(--sub-color);
+}
+
+.price_safehomes .price_item .detail {
+    margin-top: 28px;
+    font-size: 16px;
+    line-height: 19.2px;
+    letter-spacing: -0.6px;
+    color: var(--second-color);
+}
+
+.price_safehomes .price_item .price_tag {
+    margin-top: 42px;
+    font-size: 32px;
+    height: 38px;
+    line-height: 38px;
+    font-weight: bold;
+    letter-spacing: -1.2px;
+    color: var(--main-color);
+}
+
+.price_safehomes .price_item .price_detail {
+    margin-top: 15px;
+    font-size: 16px;
+    letter-spacing: -0.6px;
+    color: var(--second-color);
+}
+
+.price_safehomes .price_purchase_link {
+    display: block;
+    margin-top: 26px;
+    text-align: center;
+    height: 64px;
+    font-weight: bold;
+    line-height: 64px;
+    font-size: 16px;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 8px;
+}
+
+.after_safehomes {
+    margin-top: 53px;
+}
+
+.after_safehomes .after_list {
+    margin-top: 27px;
+}
+
+.after_safehomes .after_item {
+    box-sizing: border-box;
+    width: 394px;
+    height: 360px;
+    overflow: hidden;
+    padding: 30px 33px 24px;
+    border-radius: 16px;
+    background-color: #f2f3f4;
+    margin: 0 auto;
+}
+
+.after_safehomes .after_writer_area {
+    overflow: hidden;
+}
+
+.after_safehomes .writer_avatar {
+    float: left;
+    width: 48px;
+    height: 48px;
+    background: url('static/avatar_img.png');
+    margin: 0 16px 0 27px;
+}
+
+.after_safehomes .writer_name {
+    font-size: 18px;
+    font-weight: bold;
+    height: 20px;
+    letter-spacing: -0.67px;
+    color: var(--sub-color);
+}
+
+.after_safehomes .writer_info {
+    margin-top: 5px;
+    font-size: 18px;
+    height: 20px;
+    letter-spacing: -0.67px;
+    color: var(--second-color);
+}
+
+.after_safehomes .after_content_area {
+    margin-top: 26px;
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: -0.67px;
+    color: var(--second-color);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 7;
+    -webkit-box-orient: vertical;
+}
+
+.bottom_banner {
+    box-sizing: border-box;
+    margin-top: 48px;
+    background-color: var(--main-color);
+    padding-top: 212px;
+    text-align: center;
+    height: 608px;
+}
+
+.bottom_banner_msg {
+    font-size: 36px;
+    font-weight: bold;
+    line-height: 43.2px;
+    letter-spacing: -1.35px;
+    color: #fff;
+}
+.bottom_banner_link {
+    margin-top: 60px;
+    display: inline-block;
+    width: 170px;
+    height: 60px;
+    line-height: 60px;
+    background-color: #fff;
+    border-radius: 8px;
+    color: var(--main-color);
+    font-size: 16px;
+    letter-spacing: -0.6px;
+    font-weight: bold;
+}
+
+.footer {
+    padding: 24px 42px;
+    background-color: #f9fafb;
+}
+
+.service_info {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--sub-color);
+    letter-spacing: -0.6px;
+}
+
+.service_detail {
+    margin-top: 18px;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -1px;
+    color: #6B7684;
+}
