@@ -185,8 +185,13 @@ fieldset {
     overflow: hidden;
 }
 
+.after_safehomes .link_more {
+    display: none;
+}
+
 .about_safehomes .link_text,
-.price_safehomes .link_text {
+.price_safehomes .link_text,
+.after_safehomes .link_text {
     font-size: 18px;
     line-height: 18px;
     letter-spacing: -0.67px;
@@ -194,7 +199,8 @@ fieldset {
 }
 
 .about_safehomes .link_more::after,
-.price_safehomes .link_more::after {
+.price_safehomes .link_more::after,
+.after_safehomes .link_more::after {
     content: '';
     float: right;
     margin-left: 10px;
@@ -420,4 +426,59 @@ fieldset {
     line-height: 24px;
     letter-spacing: -1px;
     color: #6B7684;
+}
+
+@media screen and (min-width: 768px) {
+    .top_banner_link {
+        height: 307px;
+    }
+    .top_banner_msg {
+        padding-top: 102px;
+        height: 205px;
+        font-size: 36px;
+        letter-spacing: -1.35px;
+    }
+    .article_title {
+        font-size: 32px;
+    }
+    .about_safehomes .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 634px;
+        gap: 48px;
+    }
+    .price_safehomes .price_list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 736px;
+        margin: 39px auto 0;
+        gap: 32px;
+    }
+    
+    .price_safehomes .price_item + .price_item {
+        margin-top: 0px;
+    }
+
+    .after_safehomes .after_list {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;  
+    }
+    .after_safehomes .after_list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .after_safehomes .after_item {
+        flex-shrink: 0;
+        width: 680px;
+        margin: 0 21px;
+    }
+    
+    .after_safehomes .link_more {
+        display: block;
+        width: 202px;
+        margin: 31px auto 0;
+        font-size: 0;
+        overflow: hidden;
+    }
 }
