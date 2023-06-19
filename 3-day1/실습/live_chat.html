@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .chat_record {
+            width: 480px;
+            height: 500px;
+            background-color: rgb(143, 187, 225);
+            overflow-y: scroll;
+        }
+        .chat_box {
+            margin: 10px;
+        } 
+        .nickname {
+            float: left;
+            width: 50px;
+            padding: 10px;
+            text-overflow: hidden;
+        }
+        .message {
+            margin-left: 60px;
+            background-color: white;
+            padding: 10px;
+            border-right: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat_record"></div>
+    <input class="usr_nickname" type="text" placeholder="별명">
+    <input class="usr_msg" type="text" placeholder="내용">
+    <button class="send_btn" type="button">전송</button>
+    <script>
+        const send_btn = document.querySelector('.send_btn');
+
+        const sendChat = (n,m) => {
+            const chat_box = document.createElement('div');
+            chat_box.className = 'chat_box';
+            const nick = document.createElement('div');
+            nick.className = 'nickname';
+            nick.textContent = n;
+            const msg = document.createElement('div');
+            msg.className = 'message';
+            msg.textContent = m;
+            chat_box.append(nick,msg);
+
+            const record = document.querySelector('.chat_record');
+            record.append(chat_box)
+            record.scrollTop = record.scrollHeight
+        }
+
+        send_btn.addEventListener('click', function () {
+            const nm = document.querySelector('.usr_nickname').value;
+            const msg = document.querySelector('.usr_msg').value;
+            sendChat(nm, msg);
+        })
+    </script>
+</body>
+</html>

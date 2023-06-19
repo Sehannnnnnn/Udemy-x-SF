@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .menu_item {
+            width: 180px;
+            border: 1px solid black;
+            border-radius: 12px;
+            padding: 10px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>메뉴</h2>
+    <div class="menu">
+    </div>
+    <h2>장바구니</h2>
+    <ul class="shopping_cart">
+    </ul>
+    <script>
+        const items = [
+            {   
+                id: 1,
+                name : '풋팟퐁 커리',
+                price: 2000
+            },
+            {   
+                id: 2,
+                name : '피자',
+                price: 6000
+            },
+            {   id: 3,
+                name : '초밥',
+                price: 3000
+            },
+            {   
+                id: 4,
+                name : '쌀국수',
+                price: 2000
+            },
+            {   
+                id: 5,
+                name : '치킨',
+                price: 6000
+            },
+            {   id: 6,
+                name : '찜닭',
+                price: 3000
+            },
+        ]
+        const menu = document.querySelector('.menu')
+        const cart = document.querySelector('.shopping_cart')
+
+         //메뉴 엘리먼트 생성
+        const createMenuItem = ({id, name, price}) => {
+            let menuItem = document.createElement("div");
+            menuItem.className = 'menu_item';
+
+            let item = document.createElement("div");
+            item.className = 'item'
+            item.textContent = name;
+
+            let item_price = document.createElement("div");
+            item_price.className = 'item_price'
+            item_price.textContent = price;
+
+            let add_btn = document.createElement("button");
+            add_btn.className = 'item'
+            add_btn.setAttribute('value', id)
+            add_btn.textContent = '장바구니 추가';
+            add_btn.addEventListener('click', () => addItemToCart({id, name, price}))
+            menuItem.append(item, item_price, add_btn);
+            return menuItem;
+        }
+
+        //장바구니 엘리먼트 생성
+        const createCartItem = ({id, name, price}) => {
+            let cartItem = document.createElement("li");
+            cartItem.className = 'cart_item';
+            cartItem.textContent = `${name} - ${price}원`
+            return cartItem;
+        }
+       
+        const addItemToCart = (item) => {
+            let cart_item = createCartItem(item);
+            cart.prepend(cart_item);
+        }
+        
+        for (const item of items) {
+            let menu_item = createMenuItem(item);
+            menu.appendChild(menu_item);
+        }
+    </script>
+</body>
+</html>

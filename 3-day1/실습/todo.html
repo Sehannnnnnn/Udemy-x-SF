@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .todo_record {
+            width: 480px;
+            height: 500px;
+            background-color: rgb(143, 187, 225);
+            overflow-y: scroll;
+        }
+        .todo_box {
+            position: relative;
+            margin: 10px;
+        } 
+        .message {
+            background-color: white;
+            padding: 10px;
+            padding-right: 30px;
+            border-right: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
+            border-radius: 4px;
+        }
+        .delete_btn {
+            position: absolute;
+            right: 10px;
+            top: 7px;
+            padding: 5px;
+            background-color: tomato;
+            color: white;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <input class="usr_todo" type="text" placeholder="할일">
+    <button class="add_btn" type="button">추가</button>
+    <div class="todo_record"></div>
+    <script>
+        const add_btn = document.querySelector('.add_btn');
+
+        const addTodo = (m) => {
+            const todo_item = document.createElement('div');
+            todo_item.className = 'todo_box';
+            const msg = document.createElement('div');
+            msg.className = 'message';
+            msg.textContent = m;
+            const delete_btn = document.createElement('button');
+            delete_btn.className = 'delete_btn';
+            delete_btn.textContent = '삭제'
+            delete_btn.addEventListener('click', function () {
+                this.parentElement.remove();
+            })
+
+
+            todo_item.append(msg, delete_btn);
+
+            const record = document.querySelector('.todo_record');
+            record.append(todo_item)
+            record.scrollTop = record.scrollHeight
+        }
+
+        add_btn.addEventListener('click', function () {
+            const usr_todo = document.querySelector('.usr_todo').value;
+            console.log(usr_todo)
+            addTodo(usr_todo);
+        })
+    </script>
+</body>
+</html>
