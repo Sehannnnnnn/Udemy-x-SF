@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+</head>
+<body>
+    <h2 id="counter">0</h2>
+    <div>
+        <button id="plus">+1</button>
+        <button id="minus">-1</button>
+    </div>
+    <script>
+        const counter = document.getElementById('counter');
+        const plus = document.getElementById('plus');
+        const minus = document.getElementById('minus');
+    
+        function countUp () {
+            const current = parseInt(counter.innerText);
+            counter.innerText = current + 1;
+        }
+        
+        function countDown() {
+            const current = parseInt(counter.innerText);
+            counter.innerText = current - 1;
+        }
+    
+        minus.addEventListener("click", countDown)
+        plus.addEventListener("click", countUp)
+    </script>
+</body>
+</html>

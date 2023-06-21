@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .slider {
+            width: 720px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .btn {
+            flex: 1;
+            background-color: transparent;
+            border: 1px solid gray;
+        }
+        #image {
+            border: 1px solid gray;
+            width: 720px;
+            height: 420px;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        
+    </div>
+    <script type="text/babel">
+        const IMAGE_LIST = [
+            'https://file.mk.co.kr/meet/neds/2022/12/image_readtop_2022_1133219_16711975225279750.jpg',
+            'https://a-static.besthdwallpaper.com/karina-from-aespa-life-s-too-short-mv-photoshoot-girls-album-wallpaper-2560x1600-100931_7.jpg',
+            'https://i1.korea-iphone.com/files/608ad938e5c0716eab95190495148e47.jpg',
+            'https://img.girldir.com/upload/2022/06/08/liuzhimin1393761476954.jpg.wpcon.mw_1000,qt_80.9c3e75.jpg',
+            'https://i1.korea-iphone.com/files/a6bfc202ac62e4674f6dd173040f69d1.jpg',
+            'https://i.ytimg.com/vi/JIkML0Z9bUY/maxresdefault.jpg',
+            'https://cdn.bhdw.net/im/karina-from-aespa-life-s-too-short-mv-photoshoot-girls-album-wallpaper-100897_w635.webp',
+            'https://a-static.besthdwallpaper.com/karina-from-aespa-life-s-too-short-mv-photoshoot-girls-album-wallpaper-2560x1600-100931_7.jpg'
+        ]
+        const ImageSlider = ({imgs}) => {
+            const [idx, setIdx] = React.useState(0);
+            return (
+                <div>
+                    <button class="btn left" onClick={() => setIdx(idx+1 > 9 ? 0 : idx+1)}>👈</button>
+                    <img src={imgs[idx]} alt="팀원의 이미지" id="image" />
+                    <button class="btn right" onClick={() => setIdx(idx-1 < 0 ? 9 : idx-1)}>👉</button>
+                </div>
+            )
+        }
+        ReactDOM.render(<ImageSlider imgs={IMAGE_LIST}/>, root)
+    </script>
+</body>
+</html>

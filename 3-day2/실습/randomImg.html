@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>randomImg</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function RandomImg() {
+        const imgs = [
+          "https://images.unsplash.com/photo-1686956263841-406eabe5ac7f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=928&q=80",
+          "https://images.unsplash.com/photo-1603321544554-f416a9a11fcf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cmFpbnl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1597571063304-81f081944ee8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzN8fHNreXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1590077428593-a55bb07c4665?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1714&q=80",
+          "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1774&q=80",
+          "https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGNvbG9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1553356084-58ef4a67b2a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29sb3J8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1533109721025-d1ae7ee7c1e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mzl8fGNvbG9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1508898578281-774ac4893c0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDd8fGNvbG9yfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1511974212900-b42a18e19eb8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA3fHxjb2xvcnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
+        ];
+        const [imgSrc, setImgSrc] = React.useState(imgs[1]);
+        const makeRandomNum = () => {
+          setImgSrc(imgs[Math.floor(Math.random() * 10)]);
+        };
+
+        return (
+          <div>
+            <div
+              style={{
+                width: "500px",
+                height: "350px",
+                backgroundImage: `url(${imgSrc})`,
+              }}
+            ></div>
+            <button onClick={makeRandomNum}>변경</button>
+          </div>
+        );
+      }
+
+      ReactDOM.render(<RandomImg />, root);
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

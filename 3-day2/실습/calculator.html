@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>calc</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function Calc() {
+        const [firstNum, setFirstNum] = React.useState(0);
+        const [secondNum, setSecondNum] = React.useState(0);
+        const [result, setResult] = React.useState(0);
+        const onClickPlus = () => {
+          setResult(Number(firstNum) + Number(secondNum));
+        };
+        const onClickMinus = () => {
+          setResult(Number(firstNum) - Number(secondNum));
+        };
+        const onClickMultiply = () => {
+          setResult(Number(firstNum) * Number(secondNum));
+        };
+        const onClickDivide = () => {
+          setResult(Number(firstNum) / Number(secondNum));
+        };
+        return (
+          <div>
+            <input
+              placeholder="first num"
+              onChange={(e) => setFirstNum(e.currentTarget.value)}
+            />
+            <input
+              placeholder="Second num"
+              onChange={(e) => setSecondNum(e.currentTarget.value)}
+            />
+            <span>결과값 : {result}</span>
+            <button onClick={onClickPlus}>+더하기</button>
+            <button onClick={onClickMinus}>-빼기</button>
+            <button onClick={onClickMultiply}>x곱하기</button>
+            <button onClick={onClickDivide}>/나누기</button>
+          </div>
+        );
+      }
+      ReactDOM.render(<Calc />, root);
+    </script>
+  </body>
+</html>

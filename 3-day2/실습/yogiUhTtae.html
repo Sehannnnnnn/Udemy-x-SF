@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main page</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const HowAboutHere = () => {
+            const [place, setPlace] = React.useState("")
+            
+            return (<>
+                <form action="https://www.goodchoice.kr/product/result?" method="get" target="_self">
+                <div>어디로 여행을 떠나고 싶으신가요?</div>
+                <label for="keyword">여행지</label>
+                <input type="text" id="keyword" name="keyword" value={place} onChange={(e) => {
+                    setPlace(e.target.value)
+                }}/>
+                <input type="submit" value="검색하기" target="_blank"/>
+            </form>
+            <copyright>© 여기어땡</copyright>
+            </>)
+        } 
+        ReactDOM.render(<HowAboutHere />, root)
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+​
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 만들기</title>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+​
+<body>
+    <div id="root"></div>
+​
+    <script type="text/babel">
+​
+        const SignIn = () => {
+            const [id, setId] = React.useState("");
+            const [password, setPassword] = React.useState("");
+​
+            const onClick = () => {
+                console.log(id, password);
+                setId(() => "");
+                setPassword(() => "");
+            }
+​
+            return (
+                <>
+                    <h1>Sign In</h1>
+​
+                    <label for="id">ID: </label>
+                    <input type="text" id="id" value={id} onChange={(e) => { setId(e.target.value) }}></input><br /><br />
+​
+                    <label for="password">Password: </label>
+                    <input type="password" id="password" value={password} onChange={(e) => { setPassword(e.target.value) }}></input><br /><br />
+​
+                    <button id="signInBtn" onClick={onClick}>Sign In</button>
+                </>
+            )
+        }
+​
+        ReactDOM.render(<SignIn />, root);
+    </script>
+</body>
+​
+</html>

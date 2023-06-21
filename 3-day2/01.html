@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="weather"></div>
+    <script>
+        const weather = document.getElementById('weather')
+
+        function getWeather (lat, lon) {
+            const API_KEY = '15f8fbf5168d6da001f1e3c2c4b76277'
+            fetch(
+                `https://api.openweathermap.org/data/2.5/weather?lat=${lat}4&lon=${lon}n&appid=${API_KEY}`
+                ).then((res) => res.json())
+                .then((json) => {
+                    
+                })
+        }
+        
+        function handleGeoSuccess(pos) {
+            console.log(pos)
+            console.log(pos.coords.latitude)
+            console.log(pos.coords.longtitude)
+        }
+
+        function handleGeoError (pos) {
+                console.log("error")
+        }
+
+        function init () {
+                //브라우저의 현재 위치(위경도) 가져오기 -> 실행 성공, 실패 두개를 콜백으로 실행
+            navigator.geolocation.getCurrentPosition(
+                handleGeoSuccess,
+                handleGeoError
+            )
+        }
+
+        init();
+    </script>
+</body>
+</html>
