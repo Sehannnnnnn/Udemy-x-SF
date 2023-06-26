@@ -18,7 +18,7 @@ async function getRandomIMG (cb, keyword) {
     return cb(imgUrls);
 }
 
-async function getVedio (cb, keyword) {
+async function getVedio (cb) {
     const params = {
         key: ACCESS_KEY,
         min_width: 1080,
@@ -37,7 +37,7 @@ async function getVedio (cb, keyword) {
 
 const bg = document.querySelector('.bg');
 getVedio((vedioURLs) => {
-    const vedio_source = document.getElementById('vedio_source');
+    const vedio_source = document.querySelector('.bg-video__content');
     vedio_source.src = vedioURLs[parseInt(Math.random() * 20)]
 });
 
