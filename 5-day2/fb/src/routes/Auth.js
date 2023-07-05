@@ -12,7 +12,7 @@ function Auth({isLoggedIn}) {
     const [loginState, setLoginState] = useState(null);
 
     useEffect(() => {
-        auth.onAuthStateChanged((user) => {
+        onAuthStateChanged((user) => {
             if (user) {
                 setLoginState(user)
             } else {
